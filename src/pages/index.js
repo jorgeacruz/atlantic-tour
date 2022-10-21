@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Dimensions, Image, StatusBar, Animated, Touchab
 
 const {width,height} = Dimensions.get('screen');
 
-export default function () {
+export default function Home() {
 
   const transparencia = useRef(new Animated.Value(0)).current;
   
@@ -23,14 +23,14 @@ export default function () {
       <StatusBar style="auto" hidden={true}/>
 
       <Swiper autoplay={true} autoplayTimeout={6} showsPagination={false}>
-          <Image source={require('./src/image/bg2.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
-          <Image source={require('./src/image/bg.jpg')}  style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
-          <Image source={require('./src/image/bg3.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
-          <Image source={require('./src/image/bg4.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
+          <Image source={require('../image/bg2.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
+          <Image source={require('../image/bg.jpg')}  style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
+          <Image source={require('../image/bg3.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
+          <Image source={require('../image/bg4.jpg')} style={{width:width, height:height, opacity:0.6}} blurRadius={3}/>
       </Swiper>
       
       <View style={styles.areaLogo}>
-          <Image source={require('./src/image/logo.png')} />
+          <Image source={require('../image/logo.png')} />
       </View>
       <Animated.View style={[styles.Titulo,{opacity:transparencia}]}>
         <Text style={styles.subTitle}>Seu próximo destino de férias</Text>
