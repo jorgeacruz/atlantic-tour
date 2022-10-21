@@ -4,59 +4,8 @@ import { StyleSheet, Text, View, Dimensions, Image, StatusBar, Animated, Touchab
 
 const {width,height} = Dimensions.get('screen');
 
-export default function App() {
-  
-  // exemplo de calendário fixo 
-  //const [dataAtual, setDataAtual] = useState();
-  //const [ano, setAno] = useState();
-  //const [dia, setDia] = useState();
-  //const [hora, setHora] = useState();
-  //const [minutos, setMinuto] = useState();
-  //const [segundos, setSegundos] = useState();
+export default function () {
 
-  //useEffect(() => {
-  //  var date = new Date().getDate();                  //data 
-  //  var ano = new Date().getFullYear();               //ano 
-  //  var mes = new Date().getMonth() + 1;              //Mes 
-  //  var dias = new Date().getDay();                   //Dia 
-  //  var horas = new Date().getHours();                //Hora 
-  //  var minutos = new Date().getMinutes();            //Minutos 
-  //  var segundos = new Date().getSeconds();           //segundos 
-  //  var milisegundos = new Date().getMilliseconds();  //Milisegundos 
-    
-  //  setHora(horas);
-  //  setMinuto(minutos);
-  //  setSegundos(segundos);
-
-  //},[])
-
-  
-  //dia Semana
-  //var diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'][new Date().getDay()]
-  // Meses
-  //var meses = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][new Date().getMonth()]
-  // ano corrent
-  //var ano = [new Date().getFullYear()]
-  // dia do ano
-  //var diaAno = [new Date().getDate()] 
-
-  /*
-  const [time, setTime] = useState();
-  const [hora, setHora] = useState();
-  
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date().toLocaleDateString());
-    }, 1000);
-
-    return() => {
-      clearInterval(timer);
-    }
-  },[]);
- */
-  
-  
-  // animations
   const transparencia = useRef(new Animated.Value(0)).current;
   
   useEffect(() => {
