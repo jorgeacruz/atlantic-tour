@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import Swiper from 'react-native-swiper';
 import { StyleSheet, Text, View, Dimensions, Image, StatusBar, Animated, TouchableOpacity } from 'react-native';
+import IndexHome from './indexHome';
 
 const {width,height} = Dimensions.get('screen');
 
 export default function Home() {
-
-  const transparencia = useRef(new Animated.Value(0)).current;
+    
+    const navigation = useNavigation();
+    const transparencia = useRef(new Animated.Value(0)).current;
   
   useEffect(() => {
 
@@ -41,7 +44,7 @@ export default function Home() {
       </Animated.View>
 
       <Animated.View style={[styles.areaBtn,{opacity:transparencia}]}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate(IndexHome)}>
             <Text style={styles.textBtn}>ENTRAR</Text>
           </TouchableOpacity>
       </Animated.View>
