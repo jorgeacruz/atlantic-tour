@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, Dimensions, Animated, ImageBackground } from 'react-native';
+import IndexHome from './indexHome';
 
 
 const {width, height} = Dimensions.get('screen');
@@ -8,6 +9,10 @@ const {width, height} = Dimensions.get('screen');
 export default function LostPassword() {
 
     const navigation = useNavigation();
+
+    function resetPassword(){
+        navigation.navigate(IndexHome);
+    }
 
  return (
    <View style={styles.container}>
@@ -28,7 +33,7 @@ export default function LostPassword() {
             />
 
             <View style={styles.areaBtn}>
-                <TouchableOpacity style={styles.btnCriConta} >
+                <TouchableOpacity style={styles.btnCriConta} onPress={resetPassword}>
                     <Text style={{color:'#fff'}}>Recuperar Senha</Text>
                 </TouchableOpacity>
             </View>

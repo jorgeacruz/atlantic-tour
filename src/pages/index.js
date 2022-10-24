@@ -4,6 +4,7 @@ import Swiper from 'react-native-swiper';
 import { StyleSheet, Text, View, Dimensions, Image, StatusBar, Animated, TouchableOpacity } from 'react-native';
 import IndexHome from './indexHome';
 
+
 const {width,height} = Dimensions.get('screen');
 
 export default function Home() {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, Dimensions, Animated, ImageBackground } from 'react-native';
 import { set } from 'react-native-reanimated';
+import IndexHome from './indexHome';
 
 
 const {width, height} = Dimensions.get('screen');
@@ -13,6 +14,11 @@ export default function Account() {
     const [email, setEmail] = useState();
     const [senha, setSenha] = useState();
 
+    function handleCriarConta(){
+        
+            navigation.navigate(IndexHome);
+        
+    }
 
  return (
    <View style={styles.container}>
@@ -30,19 +36,22 @@ export default function Account() {
             style={styles.textInput}
             placeholder='Qual o seu nome'
             placeholderTextColor={'#fff'}
-            
+            value={nome}
+            onChangeText={(text) => setNome(text)}
             />
             <TextInput
             style={styles.textInput}
             placeholder='Digite seu email'
             placeholderTextColor={'#fff'}
-            
+            value={email}
+            onChangeText={(text) => setEmail(text)}
             />
             <TextInput
             style={styles.textInput}
             placeholder='Cadastre sua senha'
             placeholderTextColor={'#fff'}
-            
+            value={senha}
+            onChangeText={(text) => setSenha(text)}
             />
 
             <View style={styles.areaBtn}>

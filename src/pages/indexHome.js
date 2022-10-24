@@ -7,9 +7,16 @@ const {width, height} = Dimensions.get('screen');
 
 export default function IndexHome() {
 
-    const navigation = useNavigation();
-    const [nome,setNome] = useState();
-    const [email,setEmail] = useState();
+    const navigation        = useNavigation();
+    const [nome,setNome]    = useState();
+    const [email,setEmail]  = useState();
+
+    function handleLogin(){
+        if(nome == ''){
+            alert('Digite o cep desejado.');
+            return;
+          }
+    }
 
  return (
    <View style={styles.container}>
@@ -28,13 +35,14 @@ export default function IndexHome() {
             placeholder='Digite sua nome'
             placeholderTextColor={'#fff'}
             value={nome}
-            
+           //onChangeText={(text) => setNome(text)}
             />
             <TextInput
             style={styles.textInput}
             placeholder='Digite sua senha'
             placeholderTextColor={'#fff'}
             value={email}
+            onChangeText={(text) => setEmail(text)}
             
             />
 
@@ -42,7 +50,7 @@ export default function IndexHome() {
                 <TouchableOpacity style={[styles.btnCriConta,{backgroundColor:'#fff'}]} onPress={() => navigation.navigate('Account')}>
                     <Text>Criar Conta</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnLogin}>
+                <TouchableOpacity style={styles.btnLogin} onPress={handleLogin}>
                     <Text style={{color:'#fff'}}>Fazer Login</Text>
                 </TouchableOpacity>
             </View>
